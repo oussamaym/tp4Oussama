@@ -5,6 +5,7 @@
 package org.emsi.tpbanqueoussama.service;
 
 import jakarta.annotation.sql.DataSourceDefinition;
+import jakarta.enterprise.context.Dependent;
 import jakarta.enterprise.context.RequestScoped;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
@@ -34,7 +35,7 @@ import org.emsi.tpbanqueoussama.entities.CompteBancaire;
 /*
 Bean CDI pour gérer les comptes bancaires dans la base de données
  */
-@RequestScoped
+@Dependent
 public class GestionnaireCompte {
 
     @PersistenceContext(unitName = "banquePU")
@@ -48,5 +49,10 @@ public class GestionnaireCompte {
     @Transactional
     public void creerCompte(CompteBancaire c) {
         em.persist(c);
+    }
+
+    public long nbComptes() {
+        TypedQuery<Long> query = em.createQuery("SELECT COUNT(c) FROM CompteBancaire c", Long.class);
+        return query.getSingleResult();
     }
 }
