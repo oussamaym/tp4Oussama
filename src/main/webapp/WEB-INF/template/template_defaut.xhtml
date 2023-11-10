@@ -4,11 +4,12 @@
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
       xmlns:h="http://xmlns.jcp.org/jsf/html">
     <ui:insert name="metadata"/>
+
     <h:head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
         <h:outputStylesheet name="/css/default.css"/>
         <h:outputStylesheet name="/css/cssLayout.css"/>
-        <title>Facelets Template</title>
+        <title>Gestion Banque</title>
     </h:head>
 
     <h:body>
@@ -18,9 +19,11 @@
             <ui:insert name="top">Top</ui:insert>
         </div>
         <div>
-            <ui:insert name="left">
-                <ui:include src="menu.xhtml"/>
-            </ui:insert>
+            <div id="left">
+                <ui:insert name="left">
+                    <ui:include src="menu.xhtml"/>
+                </ui:insert>
+            </div>
             <div id="content" class="left_content">
                 <ui:insert name="content">Content</ui:insert>
             </div>

@@ -18,7 +18,7 @@
     float: left;
     background-color: #ece3a5;
     padding: 5px;
-    width: 150px;
+    width:  175px;
 }
 
 #right {
@@ -37,7 +37,7 @@
 .left_content {
     background-color: #dddddd;
     padding: 5px;
-    margin-left: 170px;
+    margin-left: 185px;
 }
 
 .right_content {
@@ -47,15 +47,15 @@
 }
 
 #top a:link, #top a:visited {
-  color: white;
-  font-weight : bold;
-  text-decoration: none;
+    color: white;
+    font-weight : bold;
+    text-decoration: none;
 }
 
 #top a:link:hover, #top a:visited:hover  {
-  color: black;
-  font-weight : bold;
-  text-decoration : underline;
+    color: black;
+    font-weight : bold;
+    text-decoration : underline;
 }
 
 

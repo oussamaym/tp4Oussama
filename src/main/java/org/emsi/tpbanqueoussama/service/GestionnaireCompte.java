@@ -5,6 +5,7 @@
 package org.emsi.tpbanqueoussama.service;
 
 import jakarta.annotation.sql.DataSourceDefinition;
+import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.enterprise.context.Dependent;
 import jakarta.enterprise.context.RequestScoped;
 import jakarta.persistence.EntityManager;
@@ -35,14 +36,15 @@ import org.emsi.tpbanqueoussama.entities.CompteBancaire;
 /*
 Bean CDI pour gérer les comptes bancaires dans la base de données
  */
-@Dependent
+@ApplicationScoped
 public class GestionnaireCompte {
 
     @PersistenceContext(unitName = "banquePU")
     private EntityManager em;
 
     public List<CompteBancaire> getAllComptes() {
-        TypedQuery<CompteBancaire> query = em.createNamedQuery("CompteBancaire.findAll", CompteBancaire.class);
+        String jpqlQuery = "SELECT c FROM CompteBancaire c";
+        TypedQuery<CompteBancaire> query = em.createQuery(jpqlQuery, CompteBancaire.class);
         return query.getResultList();
     }
 

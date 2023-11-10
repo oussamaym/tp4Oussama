@@ -8,6 +8,9 @@ package org.emsi.tpbanqueoussama.config;
  *
  * @author DELL
  */
+/*
+Classe de configuration de JSF
+ */
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.faces.annotation.FacesConfig;
 
