@@ -17,7 +17,7 @@ import org.emsi.tpbanqueoussama.service.GestionnaireCompte;
  * @author DELL
  */
 /*
-Bean CDI Inir pour créer des comptes bancaires au démarrage de l'application
+Bean CDI Init pour créer des comptes bancaires au démarrage de l'application
  */
 @ApplicationScoped
 public class Init {
